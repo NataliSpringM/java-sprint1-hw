@@ -33,20 +33,20 @@ class MonthData {
         for (int day : days) {
             if (day >= goalByStepsPerDay) {
                 maxLength++;
-            } else if (bestLength <= maxLength) {
-                bestLength = maxLength;
+                if (bestLength < maxLength) {
+                    bestLength = maxLength;
+                }
+            }
+            else {
                 maxLength = 0;
             }
         }
-
-        if (bestLength < maxLength) {
-            bestLength = maxLength;
-        }
         return bestLength;
     }
-
-
 }
+
+
+
 
 
 
